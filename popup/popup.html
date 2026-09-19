@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Translator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm7.93 9h-3.18a15.7 15.7 0 0 0-1.39-5.12A8.02 8.02 0 0 1 19.93 11zM12 4.07a13.72 13.72 0 0 1 2.5 6.93H9.5A13.72 13.72 0 0 1 12 4.07zM4.07 13h3.18a15.7 15.7 0 0 0 1.39 5.12A8.02 8.02 0 0 1 4.07 13zm3.18-2H4.07a8.02 8.02 0 0 1 4.57-5.12A15.7 15.7 0 0 0 7.25 11zM12 19.93a13.72 13.72 0 0 1-2.5-6.93h5a13.72 13.72 0 0 1-2.5 6.93zm3.36-1.81A15.7 15.7 0 0 0 16.75 13h3.18a8.02 8.02 0 0 1-4.57 5.12z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">Discord Translator</h1>
+          <span class="brand-badge">al español</span>
+        </div>
+      </div>
+      <!-- Master Toggle -->
+      <label class="switch" title="Activar o desactivar la extensión">
+        <input type="checkbox" id="toggle-enabled" checked>
+        <span class="slider round"></span>
+      </label>
+    </header>
+
+    <!-- Main Settings -->
+    <main class="main-content">
+      <div class="setting-card">
+        <div class="setting-info">
+          <span class="setting-label">Traducción Automática</span>
+          <span class="setting-desc">Traduce los mensajes del chat automáticamente sin tener que hacer clic.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-auto" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="setting-card">
+        <div class="setting-info">
+          <span class="setting-label">Solo Español (Ocultar inglés)</span>
+          <span class="setting-desc">Sustituye el texto original por español directamente en el mensaje.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-replace" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div class="setting-card">
+        <div class="setting-info">
+          <span class="setting-label">Traducción de Salida</span>
+          <span class="setting-desc">Añade botón 🌐 en el chat para traducir tu texto antes de enviarlo.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggle-outgoing" checked>
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <!-- Language Selector -->
+      <div class="setting-card col">
+        <label class="setting-label" for="select-lang">Idioma de Destino Principal</label>
+        <div class="custom-select-wrapper">
+          <select id="select-lang" class="custom-select">
+            <option value="es" selected>🇪🇸 Español (Spanish)</option>
+            <option value="en">🇬🇧 Inglés (English)</option>
+            <option value="fr">🇫🇷 Francés (French)</option>
+            <option value="de">🇩🇪 Alemán (German)</option>
+            <option value="it">🇮🇹 Italiano (Italian)</option>
+            <option value="pt">🇵🇹 Portugués (Portuguese)</option>
+            <option value="ja">🇯🇵 Japonés (Japanese)</option>
+            <option value="ru">🇷🇺 Ruso (Russian)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Stats Card -->
+      <div class="stats-card">
+        <div class="stat-item">
+          <span class="stat-value" id="stat-count">0</span>
+          <span class="stat-label">Mensajes Traducidos</span>
+        </div>
+        <button id="btn-clear-cache" class="btn-secondary" title="Vaciar memoria de traducciones">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+          </svg>
+          Limpiar Caché
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <span class="status-indicator">
+        <span class="status-dot"></span> Activo en Discord Web
+      </span>
+      <span class="version-tag">v1.0.0</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
